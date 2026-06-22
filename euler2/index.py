@@ -2,10 +2,17 @@ def calcFibo(num):
 	if(num > 2):
 		return calcFibo(num - 1) + calcFibo(num - 2)
 	return num;
-for i in range(1, 11):
-	if(i == 1 or i == 2):
-		continue;
+
+def isEven(num):
+	if(num % 2 == 0):
+		return True;
 	else:
-		print("fibo of ", i, "is ", calcFibo(i))
-	
-	
+		return False;
+i = 1;
+fiboSum = 0;
+while(fiboSum <= 4000000):
+	if(isEven(calcFibo(i))):
+		fiboSum = fiboSum + calcFibo(i);
+	i += 1;
+
+print(fiboSum);
