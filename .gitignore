@@ -1,0 +1,5 @@
+euler6/.gitignore
+/euler.code-workspace
+*.code-workspace
+euler.code-workspace
+.euler.code-workspace
