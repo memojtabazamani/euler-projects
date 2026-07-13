@@ -8,13 +8,38 @@ matrix = [
 ]
 
 row = row_c = col = col_c = 0;
-split_number = 4;
+split_number = 3;
 counter_spliter = 0;
-
+col_original = row_original = 0;
 while (row < 6):
     rr = len(matrix) - row;
-    if(len(matrix) - row == split_number - 1):
-        break;
+    cr = col * row;
+    if(split_number > col):
+        cr2 = split_number - col;
+    else:
+         cr2 = col - split_number;
+    cr3 = col + split_number - 1;
+    # if(len(matrix) - row  < split_number):
+    # ress = 0;
+    # if(cr != 0 ):
+    #     rrrtt = 
+    # if(cr > split_number):
+    #     ress = cr / split_number;
+    # elif(cr != 0 and cr < split_number): 
+    #     ress = split_number / cr;
+    # if(cr != 0 and ress != split_number):
+    #     row = row_c = row_original = 0;
+    #     col_original = col_original + 1;
+    #     col = col_c = col = col_original;
+    # if(cr2 > split_number or col > split_number):
+    #     row = row_c = row_original = 0;
+    #     col_original = col_original + 1;
+    #     col = col_c = col = col_original;
+    if(cr3 >= len(matrix)):
+        row = row_c = row_original = 0;
+        col_original = col_original + 1;
+        col = col_c = col = col_original;   
+        
     while(counter_spliter < split_number):
         print(matrix[row_c][col_c]);
         counter_spliter = counter_spliter + 1;
@@ -23,6 +48,7 @@ while (row < 6):
     row_c = row = row + 1;
     col_c = col = col + 1;
     counter_spliter = 0;
+print(row)
 # matrix = [
 #     [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
 #     [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
